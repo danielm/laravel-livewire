@@ -1,1 +1,1 @@
-Simple project to demonstrate the use of Laravel 8 Jetstream components (Livewire)
+Lets work with Jetstream, first stop is Livewire (example project for our course)
