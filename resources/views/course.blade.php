@@ -38,31 +38,13 @@
 
       <div class="grid grid-cols-2 gap-4 my-8">
         @foreach ($course->related() as $related)
-          <div class="bg-white shadow-lg rounded-lg mb-3">
-            <a href="{{ route('course', $related->slug) }}">
-                <img src="{{ $related->image }}" class="rounded-t-md"><!-- rounded-md -->
-                <div class="px-4 py-4">
-                    <h2 class="text-lg text-gray-600 truncate font-medium mb-4" title="{{ $related->name }}">{{ $related->name }}</h2>
-                    <h3 class="text-md text-gray-500 mb-6">{{ $related->excerpt }}</h3>
-
-
-                    <div class="flex mt-3">
-                        <img src="{{ $related->user->avatar }}" class="h-10 w-10 rounded-full mr-2">
-                        <div>
-                            <p class="text-gray-500 text-sm font-medium">{{ $related->user->name }}</p>
-                            <p class="text-gray-500 text-sm" title="{{ $related->created_at->format('M jS, Y @ H:i') }}">{{ $related->created_at->diffForHumans() }}</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
+          <x-course-card :course="$related" />
         @endforeach
       </div>
     </div>
   </div>
 
   <hr class="my-10" />
-
 
   <livewire:course-list />
 @endsection
