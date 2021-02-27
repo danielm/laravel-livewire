@@ -7,7 +7,7 @@
 
 
             <div class="flex mt-3">
-                <img src="{{ $course->user->avatar }}" class="h-10 w-10 rounded-full mr-2">
+                <img src="{{ $course->user->avatar }}" class="h-10 w-10 object-cover rounded-full mr-2">
                 <div>
                     <p class="text-gray-500 text-sm font-medium">{{ $course->user->name }}</p>
                     <p class="text-gray-500 text-sm" title="{{ $course->created_at->format('M jS, Y @ H:i') }}">{{ $course->created_at->diffForHumans() }}</p>
